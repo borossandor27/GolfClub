@@ -43,18 +43,31 @@ namespace MySQL
             }
             sql = conn.CreateCommand(); //-- a későbbiekben mindig ezen az objektumon keresztül küldjük a parancsot
             LIstbox_Update();
+            dateTimePicker_Szuletett.MaxDate = DateTime.Today.AddYears(-18);
         }
 
         void LIstbox_Update()
         {
             sql.CommandText = "SELECT `id`,`Nev`,`Szuletett` FROM `Tagok` ORDER BY `Nev`";
-            using (MySqlDataReader dr = sql.ExecuteReader())
+            try
             {
-                listBox_Tagok.Items.Clear();
-                while (dr.Read())
+                using (MySqlDataReader dr = sql.ExecuteReader())
                 {
-                    listBox_Tagok.Items.Add(new Tag(dr.GetInt32("id"), dr.GetString("Nev"), dr.GetDateTime("Szuletett")));
+                    listBox_Tagok.Items.Clear();
+
+                    while (dr.Read())
+                    {
+                        listBox_Tagok.Items.Add(new Tag(dr.GetInt32("id"), dr.GetString("Nev"), dr.GetDateTime("Szuletett")));
+                    }
                 }
+                KivalasztottTag = null;
+                textBox_Id.Text = "";
+                textBox_Nev.Text = "";
+                dateTimePicker_Szuletett.Value = DateTime.Today.AddYears(-35);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -86,8 +99,6 @@ namespace MySQL
                 return;
             }
             LIstbox_Update();
-            textBox_Nev.Text = "";
-            dateTimePicker_Szuletett.Value = DateTime.Today.AddYears(-35);
         }
 
         private void listBox_Tagok_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,7 +150,7 @@ namespace MySQL
             {
                 MessageBox.Show(ex.Message);
             }
-            KivalasztottTag = null;
+
             textBox_Id.Text = "";
             textBox_Nev.Text = "";
             dateTimePicker_Szuletett.Value = DateTime.Today.AddYears(-35);

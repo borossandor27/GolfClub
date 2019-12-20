@@ -112,6 +112,7 @@
             this.textBox_Id.ReadOnly = true;
             this.textBox_Id.Size = new System.Drawing.Size(176, 20);
             this.textBox_Id.TabIndex = 2;
+            this.textBox_Id.TabStop = false;
             this.textBox_Id.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // button_Update
