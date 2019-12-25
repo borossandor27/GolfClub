@@ -40,13 +40,15 @@
             this.button_Update = new System.Windows.Forms.Button();
             this.button_Delete = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(28, 29);
+            this.label1.Location = new System.Drawing.Point(33, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(16, 13);
             this.label1.TabIndex = 1;
@@ -54,7 +56,7 @@
             // 
             // textBox_Nev
             // 
-            this.textBox_Nev.Location = new System.Drawing.Point(93, 83);
+            this.textBox_Nev.Location = new System.Drawing.Point(98, 73);
             this.textBox_Nev.Name = "textBox_Nev";
             this.textBox_Nev.Size = new System.Drawing.Size(176, 20);
             this.textBox_Nev.TabIndex = 2;
@@ -62,7 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 89);
+            this.label2.Location = new System.Drawing.Point(36, 79);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 3;
@@ -71,7 +73,7 @@
             // dateTimePicker_Szuletett
             // 
             this.dateTimePicker_Szuletett.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_Szuletett.Location = new System.Drawing.Point(93, 143);
+            this.dateTimePicker_Szuletett.Location = new System.Drawing.Point(98, 133);
             this.dateTimePicker_Szuletett.Name = "dateTimePicker_Szuletett";
             this.dateTimePicker_Szuletett.Size = new System.Drawing.Size(176, 20);
             this.dateTimePicker_Szuletett.TabIndex = 4;
@@ -79,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 149);
+            this.label3.Location = new System.Drawing.Point(13, 139);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 5;
@@ -97,7 +99,7 @@
             // 
             // button_Insert
             // 
-            this.button_Insert.Location = new System.Drawing.Point(31, 198);
+            this.button_Insert.Location = new System.Drawing.Point(49, 261);
             this.button_Insert.Name = "button_Insert";
             this.button_Insert.Size = new System.Drawing.Size(238, 34);
             this.button_Insert.TabIndex = 7;
@@ -107,7 +109,7 @@
             // 
             // textBox_Id
             // 
-            this.textBox_Id.Location = new System.Drawing.Point(93, 29);
+            this.textBox_Id.Location = new System.Drawing.Point(98, 19);
             this.textBox_Id.Name = "textBox_Id";
             this.textBox_Id.ReadOnly = true;
             this.textBox_Id.Size = new System.Drawing.Size(176, 20);
@@ -117,7 +119,7 @@
             // 
             // button_Update
             // 
-            this.button_Update.Location = new System.Drawing.Point(31, 248);
+            this.button_Update.Location = new System.Drawing.Point(49, 311);
             this.button_Update.Name = "button_Update";
             this.button_Update.Size = new System.Drawing.Size(238, 34);
             this.button_Update.TabIndex = 7;
@@ -127,7 +129,7 @@
             // 
             // button_Delete
             // 
-            this.button_Delete.Location = new System.Drawing.Point(31, 300);
+            this.button_Delete.Location = new System.Drawing.Point(49, 363);
             this.button_Delete.Name = "button_Delete";
             this.button_Delete.Size = new System.Drawing.Size(238, 34);
             this.button_Delete.TabIndex = 7;
@@ -146,28 +148,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Club tags";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBox_Id);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.textBox_Nev);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.dateTimePicker_Szuletett);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Location = new System.Drawing.Point(13, 16);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(293, 207);
+            this.groupBox2.TabIndex = 9;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "A Club tag adatai";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 450);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_Delete);
             this.Controls.Add(this.button_Update);
             this.Controls.Add(this.button_Insert);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker_Szuletett);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox_Id);
-            this.Controls.Add(this.textBox_Nev);
-            this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Nagymenők Golf  Club Tagjai";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -183,6 +196,7 @@
         private System.Windows.Forms.Button button_Update;
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
     }
 }
 

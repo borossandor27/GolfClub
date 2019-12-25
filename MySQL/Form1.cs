@@ -60,10 +60,6 @@ namespace MySQL
                         listBox_Tagok.Items.Add(new Tag(dr.GetInt32("id"), dr.GetString("Nev"), dr.GetDateTime("Szuletett")));
                     }
                 }
-                KivalasztottTag = null;
-                textBox_Id.Text = "";
-                textBox_Nev.Text = "";
-                dateTimePicker_Szuletett.Value = DateTime.Today.AddYears(-35);
             }
             catch (MySqlException ex)
             {
@@ -151,9 +147,6 @@ namespace MySQL
                 MessageBox.Show(ex.Message);
             }
 
-            textBox_Id.Text = "";
-            textBox_Nev.Text = "";
-            dateTimePicker_Szuletett.Value = DateTime.Today.AddYears(-35);
             LIstbox_Update();
         }
 
@@ -174,10 +167,6 @@ namespace MySQL
             {
                 MessageBox.Show(ex.Message);
             }
-            KivalasztottTag = null;
-            textBox_Id.Text = "";
-            textBox_Nev.Text = "";
-            dateTimePicker_Szuletett.Value = DateTime.Today.AddYears(-35);
             LIstbox_Update();
         }
     }
